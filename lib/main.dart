@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)
             .copyWith(background: Colors.brown[200]),
       ),
-      home: const AuthPage(),
+      home: const HomePage(),
     );
   }
 }

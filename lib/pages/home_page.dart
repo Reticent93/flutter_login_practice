@@ -7,22 +7,28 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.lock),
+        body: SafeArea(
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            color: Colors.brown[200],
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 50,
+                ),
+                Image.asset('images/shop.png'),
+                const TextFieldComponent(),
+                SizedBox(
+                  height: 20,
+                ),
+                const TextFieldComponent(),
+              ],
+            ),
           ),
-        ],
-      ),
-      body: const SafeArea(
-        child: Column(
-          children: [
-            TextFieldComponent(),
-            TextFieldComponent(),
-          ],
         ),
       ),
-    );
+    ));
   }
 }
