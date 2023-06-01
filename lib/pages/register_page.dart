@@ -3,17 +3,19 @@ import 'package:flutter_login_practice/components/my_button_component.dart';
 import 'package:flutter_login_practice/components/square_tile_component.dart';
 import 'package:flutter_login_practice/components/text_field_component.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key, required this.onTap}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key, required this.onTap}) : super(key: key);
+
   final Function()? onTap;
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -53,13 +55,13 @@ class _LoginPageState extends State<LoginPage> {
                 child: Row(
                   children: [
                     const Text(
-                      'Not a member?',
+                      'Already a member?',
                       style: TextStyle(color: Colors.white),
                     ),
                     GestureDetector(
                       onTap: widget.onTap,
                       child: const Text(
-                        ' Register now',
+                        ' Log In',
                         style: TextStyle(
                           color: Colors.brown,
                           fontWeight: FontWeight.bold,
@@ -83,21 +85,19 @@ class _LoginPageState extends State<LoginPage> {
                     hintText: 'Password',
                     obscureText: true),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: TextFieldComponent(
+                    controller: confirmPasswordController,
+                    hintText: 'Confirm Password',
+                    obscureText: true),
+              ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: Row(
                   children: [
                     SizedBox(
                       height: 20,
-                    ),
-                    Expanded(
-                      child: Text(
-                        textAlign: TextAlign.right,
-                        'Forgot Password?',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
                     ),
                   ],
                 ),
@@ -106,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 30,
               ),
               const MyButton(
-                text: 'Sign In',
+                text: 'Sign Up',
               ),
               const Center(
                 heightFactor: 3,
