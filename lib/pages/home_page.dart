@@ -15,15 +15,15 @@ class HomePage extends StatelessWidget {
             color: Colors.brown[200],
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 Image.asset('images/shop.png'),
-                const TextFieldComponent(),
-                SizedBox(
+                // const TextFieldComponent(),
+                const SizedBox(
                   height: 20,
                 ),
-                const TextFieldComponent(),
+                // const TextFieldComponent(),
               ],
             ),
           ),
